@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    depends_on:
+      - wordpress
+    ports:
+      - 442:442
+    volumes:
+      - wp:/var/www/html
+    networks:
+      - sasori_chunk
+
+  wordpress:
+    build: ./wordpress
+    container_name: wordpress
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - 9000:9000
+    volumes:
+      - wp:/var/www/html
+    networks:
+      - sasori_chunk
+      
+  mariadb:
+    build: ./mariadb
+    container_name: mariadb
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - md:/var/lib/mysql
+    networks:
+      - sasori_chunk
+
+
+
+# o: bind -> option bind to bind the volume to a specific path on the host machine, so that the data is persistent even if the container is removed
+# means the files in the container are stored in the local folder specified, and changes made to those files are immediately visible in both the container and the local folder
+volumes:
+  wp:
+    name: wp
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/sasori/data/wp
+  md:
+    name: md
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/sasori/data/md
+
+networks:
+  sasori_chunk:
+    name: sasori_chunk
+    driver: bridge

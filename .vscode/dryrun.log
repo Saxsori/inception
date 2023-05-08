@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/sasori/Documents/inception'
+docker build -t nginx-image ./nginx/
+make: Leaving directory `/Users/sasori/Documents/inception'
+ 
