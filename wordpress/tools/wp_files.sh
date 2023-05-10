@@ -8,7 +8,23 @@ mv /wp-config.php /var/www/html/
 
 wp core install --allow-root --path=/var/www/html/ --url=localhost:442 --title="YOOO IT'S A B R A R" --admin_user=abrar --admin_password=abrar123 --admin_email=saxxxsori@gmail.com
 
-wp user create --allow-root  --path=/var/www/html/ sasori sasori@gmail.com --role=contributor --user_pass=password
+wp user create --allow-root --path=/var/www/html/ sasori sasori@gmail.com --role=contributor --user_pass=password
+
+echo "wp installed ..."
+
+wp config --allow-root --path=/var/www/html/ set WP_CACHE_KEY_SALT 'sasori_chuck_isakey'
+
+wp config --allow-root --path=/var/www/html/ set WP_CACHE true
+
+wp config  --allow-root --path=/var/www/html/ set WP_REDIS_HOST 'redis'
+
+wp config --allow-root --path=/var/www/html/ set WP_REDIS_PORT '6379'
+
+wp plugin install redis-cache --allow-root --path=/var/www/html/ --activate
+
+wp redis enable --allow-root --path=/var/www/html/
+
+echo "redis cache plugin installed ..."
 
 else
 	echo "wp does exist ..."
