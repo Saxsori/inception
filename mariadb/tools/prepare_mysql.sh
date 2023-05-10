@@ -24,10 +24,10 @@ if [ ! -d /var/lib/mysql/wpdb ]; then
 	echo "db does exists ..."
 fi
 
-# service mysql stop
+service mysql stop
 
 # mysqld --console
 
-tail -f /dev/null
+# tail -f /dev/null
 
-# mysqld_safe
+mysqld_safe --console
