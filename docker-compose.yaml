@@ -49,17 +49,17 @@ services:
     networks:
       - sasori_chunk
 
-  # ftp:
-  #   build: ./ftp
-  #   container_name: ftp
-  #   restart: always
-  #   ports:
-  #     - 21:21
-  #     - 1024-1048:1024-1048
-  #   volumes:
-  #     - wp:/var/www/html
-  #   networks:
-  #     - sasori_chunk
+  ftp:
+    build: ./ftp
+    container_name: ftp
+    restart: always
+    ports:
+      - 21:21
+      - 1024-1048:1024-1048
+    volumes:
+      - wp:/var/www/html
+    networks:
+      - sasori_chunk
 
   staticsite:
     build: ./staticsite
