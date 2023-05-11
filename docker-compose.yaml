@@ -80,6 +80,18 @@ services:
       - 8080:8080
     networks:
       - sasori_chunk
+   
+  service:
+    build: ./service
+    container_name: portainer
+    restart: always
+    ports:
+      - 8977:8977
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - sasori_chunk
 
 
 # o: bind -> option bind to bind the volume to a specific path on the host machine, so that the data is persistent even if the container is removed
@@ -99,6 +111,13 @@ volumes:
       o: bind
       type: none
       device: /Users/sasori/data/md
+  portainer_data:
+    name: portainer_data
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/sasori/data/pr
 
 networks:
   sasori_chunk:
