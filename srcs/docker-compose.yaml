@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nginx:
-    build: ./nginx
+    build: ./requirements/nginx
     container_name: nginx
     restart: always
     depends_on:
@@ -15,7 +15,7 @@ services:
       - sasori_chunk
 
   wordpress:
-    build: ./wordpress
+    build: ./requirements/wordpress
     container_name: wordpress
     restart: always
     depends_on:
@@ -28,7 +28,7 @@ services:
       - sasori_chunk
       
   mariadb:
-    build: ./mariadb
+    build: ./requirements/mariadb
     container_name: mariadb
     restart: always
     ports:
@@ -39,7 +39,7 @@ services:
       - sasori_chunk
 
   redis:
-    build: ./redis
+    build: ./requirements/bonus/redis
     container_name: redis
     depends_on:
       - wordpress
@@ -50,7 +50,7 @@ services:
       - sasori_chunk
 
   ftp:
-    build: ./ftp
+    build: ./requirements/bonus/ftp
     container_name: ftp
     restart: always
     ports:
@@ -62,7 +62,7 @@ services:
       - sasori_chunk
 
   staticsite:
-    build: ./staticsite
+    build: ./requirements/bonus/staticsite
     container_name: staticsite
     restart: always
     ports:
@@ -71,7 +71,7 @@ services:
       - sasori_chunk
   
   adminer:
-    build: ./adminer
+    build: ./requirements/bonus/adminer
     container_name: adminer
     restart: always
     depends_on:
@@ -82,7 +82,7 @@ services:
       - sasori_chunk
    
   service:
-    build: ./service
+    build: ./requirements/bonus/service
     container_name: portainer
     restart: always
     ports:
@@ -104,6 +104,7 @@ volumes:
       o: bind
       type: none
       device: /Users/sasori/data/wp
+
   md:
     name: md
     driver: local
@@ -111,6 +112,7 @@ volumes:
       o: bind
       type: none
       device: /Users/sasori/data/md
+
   portainer_data:
     name: portainer_data
     driver: local
@@ -118,6 +120,7 @@ volumes:
       o: bind
       type: none
       device: /Users/sasori/data/pr
+
 
 networks:
   sasori_chunk:
