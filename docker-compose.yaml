@@ -49,6 +49,37 @@ services:
     networks:
       - sasori_chunk
 
+  # ftp:
+  #   build: ./ftp
+  #   container_name: ftp
+  #   restart: always
+  #   ports:
+  #     - 21:21
+  #     - 1024-1048:1024-1048
+  #   volumes:
+  #     - wp:/var/www/html
+  #   networks:
+  #     - sasori_chunk
+
+  staticsite:
+    build: ./staticsite
+    container_name: staticsite
+    restart: always
+    ports:
+      - 7777:7777
+    networks:
+      - sasori_chunk
+  
+  adminer:
+    build: ./adminer
+    container_name: adminer
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - 8080:8080
+    networks:
+      - sasori_chunk
 
 
 # o: bind -> option bind to bind the volume to a specific path on the host machine, so that the data is persistent even if the container is removed
