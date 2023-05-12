@@ -83,13 +83,13 @@ services:
    
   service:
     build: ./requirements/bonus/service
-    container_name: portainer
+    container_name: service
     restart: always
     ports:
       - 8977:8977
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - pr:/data
     networks:
       - sasori_chunk
 
@@ -113,15 +113,18 @@ volumes:
       type: none
       device: /Users/sasori/data/md
 
-  portainer_data:
-    name: portainer_data
+  pr:
+    name: pr
     driver: local
     driver_opts:
       o: bind
       type: none
       device: /Users/sasori/data/pr
 
-
+# network driver enables containerized applications to communicate with each other and with external resources
+# bridge is the default network driver, used to create internal network within docker host
+# bridge driver creates a virtual network bridge on docker host, and containers connect to it
+# each container gets an IP address on the bridge network
 networks:
   sasori_chunk:
     name: sasori_chunk
