@@ -24,6 +24,8 @@ services:
       - 9000:9000
     volumes:
       - wp:/var/www/html
+    env_file:
+      - .env
     networks:
       - sasori_chunk
       
@@ -35,6 +37,8 @@ services:
       - 3306:3306
     volumes:
       - md:/var/lib/mysql
+    env_file:
+      - .env
     networks:
       - sasori_chunk
 

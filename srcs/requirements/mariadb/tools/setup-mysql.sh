@@ -19,9 +19,9 @@ service mysql start
 # find /
 
 if [ ! -d /var/lib/mysql/wpdb ]; then
-	mysql -e "CREATE DATABASE wpdb;"
-	mysql -e "CREATE USER 'abrar'@'%' identified by 'abrar123';"
-	mysql -e "GRANT ALL PRIVILEGES ON wpdb.* TO 'abrar'@'%';"
+	mysql -e "CREATE DATABASE $MYSQL_DB_NAME;"
+	mysql -e "CREATE USER '$ADMIN_USER'@'%' identified by '$ADMIN_PASS';"
+	mysql -e "GRANT ALL PRIVILEGES ON $MYSQL_DB_NAME.* TO '$ADMIN_USER'@'%';"
 	mysql -e "FLUSH PRIVILEGES;"
 	echo "ABRAR: db has been created !!"
 	else
