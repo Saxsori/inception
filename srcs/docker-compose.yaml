@@ -49,49 +49,49 @@ services:
     networks:
       - sasori_chunk
 
-  ftp:
-    build: ./requirements/bonus/ftp
-    container_name: ftp
-    restart: always
-    ports:
-      - 21:21
-      - 1024-1048:1024-1048
-    volumes:
-      - wp:/var/www/html
-    networks:
-      - sasori_chunk
+  # ftp:
+  #   build: ./requirements/bonus/ftp
+  #   container_name: ftp
+  #   restart: always
+  #   ports:
+  #     - 21:21
+  #     - 1024-1048:1024-1048
+  #   volumes:
+  #     - wp:/var/www/html
+  #   networks:
+  #     - sasori_chunk
 
-  staticsite:
-    build: ./requirements/bonus/staticsite
-    container_name: staticsite
-    restart: always
-    ports:
-      - 7777:7777
-    networks:
-      - sasori_chunk
+  # staticsite:
+  #   build: ./requirements/bonus/staticsite
+  #   container_name: staticsite
+  #   restart: always
+  #   ports:
+  #     - 7777:7777
+  #   networks:
+  #     - sasori_chunk
   
-  adminer:
-    build: ./requirements/bonus/adminer
-    container_name: adminer
-    restart: always
-    depends_on:
-      - mariadb
-    ports:
-      - 8080:8080
-    networks:
-      - sasori_chunk
+  # adminer:
+  #   build: ./requirements/bonus/adminer
+  #   container_name: adminer
+  #   restart: always
+  #   depends_on:
+  #     - mariadb
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - sasori_chunk
    
-  service:
-    build: ./requirements/bonus/service
-    container_name: service
-    restart: always
-    ports:
-      - 8977:8977
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - pr:/data
-    networks:
-      - sasori_chunk
+  # service:
+  #   build: ./requirements/bonus/service
+  #   container_name: service
+  #   restart: always
+  #   ports:
+  #     - 8977:8977
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - pr:/data
+  #   networks:
+  #     - sasori_chunk
 
 
 # o: bind -> option bind to bind the volume to a specific path on the host machine, so that the data is persistent even if the container is removed

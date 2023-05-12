@@ -23,8 +23,9 @@ if [ ! -d /var/lib/mysql/wpdb ]; then
 	mysql -e "CREATE USER 'abrar'@'%' identified by 'abrar123';"
 	mysql -e "GRANT ALL PRIVILEGES ON wpdb.* TO 'abrar'@'%';"
 	mysql -e "FLUSH PRIVILEGES;"
+	echo "ABRAR: db has been created !!"
 	else
-	echo "db does exists ..."
+	echo "ABRAR: db does exists !!"
 fi
 
 # starting mysql in this way doesn't make the container stays running 

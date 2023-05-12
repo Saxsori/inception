@@ -12,15 +12,13 @@ RUN chmod +x wp-cli.phar
 
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-
-COPY ./conf/wp-config.php /wp-config.php
-
-COPY ./tools/wp_files.sh /wp_files.sh
+# set up wordpress
+COPY ./tools/setup-wp.sh /setup-wp.sh
 
 WORKDIR /
 
-RUN chmod +x /wp_files.sh
+RUN chmod +x /setup-wp.sh
 
 EXPOSE 9000
 
-ENTRYPOINT ["./wp_files.sh"]
+ENTRYPOINT ["./setup-wp.sh"]
