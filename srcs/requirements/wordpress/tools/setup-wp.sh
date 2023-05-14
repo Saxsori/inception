@@ -20,7 +20,7 @@ echo "ABRAR: wp config is done !!"
 
 
 # required to install wp and not to show the installation page
-wp core install --allow-root --path=/var/www/html/ --url=localhost:445 --title="YOOO IT'S A B R A R" --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASS --admin_email=$ADMIN_EMAIL
+wp core install --allow-root --path=/var/www/html/ --url=localhost:443 --title="YOOO IT'S A B R A R" --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASS --admin_email=$ADMIN_EMAIL
 echo "ABRAR: wp installation page !!"
 
 

@@ -1,6 +1,6 @@
 
 DB_PATH = /Users/sasori/data/db
-WP_PATH = /Users/sasori/data/wp
+WP_PATH = /Users/sasori/data/pr
 PR_PATH = /Users/sasori/data/wp
 
 volume: 
@@ -11,7 +11,7 @@ build:
 
 run: 
 	docker-compose -f ./srcs/docker-compose.yaml up
-	
+
 clean: 
 	docker-compose -f ./srcs/docker-compose.yaml down -v
 
