@@ -12,6 +12,6 @@ COPY ./conf/wordpress.conf /etc/nginx/sites-available/wordpress.conf
 
 RUN ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
 
-EXPOSE 442
+EXPOSE 445
 
 CMD ["nginx", "-g", "daemon off;"]
