@@ -1,7 +1,7 @@
 
-DB_PATH = /Users/sasori/data/db
-WP_PATH = /Users/sasori/data/pr
-PR_PATH = /Users/sasori/data/wp
+DB_PATH = /Users/saxsori/data/md
+WP_PATH = /Users/saxsori/data/pr
+PR_PATH = /Users/saxsori/data/wp
 
 volume: 
 	mkdir -p $(DB_PATH) $(WP_PATH) $(PR_PATH)
