@@ -16,6 +16,6 @@ WORKDIR /portainer
 
 EXPOSE 8977
 
-# CMD ["./portainer", "--bind", ":8977"]
+CMD ["./portainer", "--bind", ":8977"]
 
-CMD ["tail", "-f", "/dev/null"]
+# CMD ["tail", "-f", "/dev/null"]
