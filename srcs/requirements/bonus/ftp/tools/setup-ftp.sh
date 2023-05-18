@@ -13,7 +13,7 @@ chown -R abrar:abrar123 /var/www/html
 
 RUN mkdir -p /var/run/vsftpd/empty
 
-RUN mkdir /home/abrar
+RUN mkdir /Users/abrar
 
 # Add user to FTP users list
 echo abrar | tee -a /etc/vsftpd.userlist
