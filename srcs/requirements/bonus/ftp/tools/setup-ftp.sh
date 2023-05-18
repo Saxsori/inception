@@ -11,5 +11,9 @@ echo 'abrar:abrar123' | chpasswd
 # Set password for user
 chown -R abrar:abrar123 /var/www/html
 
+RUN mkdir -p /var/run/vsftpd/empty
+
+RUN mkdir /home/abrar
+
 # Add user to FTP users list
 echo abrar | tee -a /etc/vsftpd.userlist
