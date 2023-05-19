@@ -2,12 +2,12 @@
 
 mkdir -p /var/www/html
 
-adduser abrar --disabled-password
+adduser $FTP_USER --disabled-password
 
-echo "abrar:abrar123" | chpasswd 
+echo "$FTP_USER:$FTP_PASS" | chpasswd 
 
-chown -R abrar:abrar /var/www/html
+chown -R $FTP_USER:$FTP_USER /var/www/html
 
-echo abrar | tee -a /etc/vsftpd.userlist
+echo $FTP_USER | tee -a /etc/vsftpd.userlist
 
 vsftpd /etc/vsftpd/vsftpd.conf
