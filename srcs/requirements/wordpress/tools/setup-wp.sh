@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 5
+
 # to avoid doing this every time
 if [ ! -e /var/www/html/wp-config.php ]; then
 
