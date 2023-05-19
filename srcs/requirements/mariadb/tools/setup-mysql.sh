@@ -18,6 +18,9 @@ service mysql start
 
 # find /
 
+mysql -u root -e "USE mysql; UPDATE user SET authentication_string = PASSWORD('$ROOT_PASS') WHERE User = 'root'; FLUSH PRIVILEGES;"
+
+
 if [ ! -d /var/lib/mysql/wpdb ]; then
 	mysql -e "CREATE DATABASE $MYSQL_DB_NAME;"
 	mysql -e "CREATE USER '$ADMIN_USER'@'%' identified by '$ADMIN_PASS';"
