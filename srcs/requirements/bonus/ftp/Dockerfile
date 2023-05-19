@@ -1,19 +1,15 @@
-FROM debian:buster
+FROM alpine:3.13
 
-RUN apt-get update && apt-get install --yes vsftpd
+RUN	apk update && apk upgrade && apk add vsftpd
 
-COPY ./conf/vsftpd.conf /vsftpd.conf
-
-WORKDIR /
+COPY ./conf/vsftpd.conf /etc/vsftpd/vsftpd.conf
 
 COPY ./tools/setup-ftp.sh /setup-ftp.sh
 
 RUN chmod +x /setup-ftp.sh
 
-RUN ./setup-ftp.sh
+EXPOSE 21 21100-21110
 
-EXPOSE 21 20
+WORKDIR /
 
-CMD ["vsftpd", "/vsftpd.conf"]
-
-
+ENTRYPOINT [ "./setup-ftp.sh" ]

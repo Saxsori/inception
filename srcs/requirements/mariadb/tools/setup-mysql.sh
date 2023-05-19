@@ -31,6 +31,8 @@ fi
 # starting mysql in this way doesn't make the container stays running 
 service mysql stop
 
+# exec mysqld 
+
 mysqld --console
 
 # tail -f /dev/null

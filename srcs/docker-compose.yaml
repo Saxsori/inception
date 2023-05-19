@@ -58,8 +58,8 @@ services:
     container_name: ftp
     restart: always
     ports:
-      - 21:21
-      - 1024-1048:1024-1048
+      - "21:21"
+      - "21100-21110:21100-21110"
     volumes:
       - wp:/var/www/html
     env_file:
