@@ -109,7 +109,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /Users/$USER/data/wp
+      device: /home/$USER/data/wp
 
   md:
     name: md
@@ -117,7 +117,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /Users/$USER/data/md
+      device: /home/$USER/data/md
 
   pr:
     name: pr
@@ -125,7 +125,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /Users/$USER/data/pr
+      device: /home/$USER/data/pr
 
 # network driver enables containerized applications to communicate with each other and with external resources
 # bridge is the default network driver, used to create internal network within docker host
