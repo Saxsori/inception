@@ -33,7 +33,7 @@ services:
     build: ./requirements/mariadb
     container_name: mariadb
     healthcheck:
-      test: ["CMD_SHELL", "pgrep mysqld"]
+      test: ["CMD-SHELL", "pgrep mysqld"]
       interval: 10s
       timeout: 5s
       retries: 10
