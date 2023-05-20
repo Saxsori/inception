@@ -1,7 +1,5 @@
 #!/bin/bash
 
-wget https://wordpress.org/latest.tar.gz && tar -xvzf latest.tar.gz && rm -rf latest.tar.gz
-
 # install wp-cli to manage wordpress
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
@@ -11,6 +9,7 @@ mv wp-cli.phar /usr/local/bin/wp
 
 # to avoid doing this every time
 if [ ! -e /var/www/html/wp-config.php ]; then
+wget https://wordpress.org/latest.tar.gz && tar -xvzf latest.tar.gz && rm -rf latest.tar.gz
 
 cp -r /wordpress/* /var/www/html/
 
