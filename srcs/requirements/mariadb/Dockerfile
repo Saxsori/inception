@@ -8,6 +8,4 @@ RUN chmod +x /setup-mysql.sh
 
 RUN mkdir -p /mdlib && cp -r /var/lib/mysql/* /mdlib
 
-EXPOSE 3306
-
 ENTRYPOINT [ "./setup-mysql.sh" ]

@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install --yes redis-server
 
 # RUN sed -i 's/protected-mode yes/protected-mode no/g' /etc/redis/redis.conf
 
-EXPOSE 6379
+# EXPOSE 6379
 
 # redis was showing error to run the server on protected mode 
 CMD ["redis-server", "--daemonize", "no", "--protected-mode", "no"]

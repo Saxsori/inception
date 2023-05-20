@@ -11,6 +11,4 @@ WORKDIR /
 
 RUN chmod +x /setup-wp.sh
 
-EXPOSE 9000
-
 ENTRYPOINT ["./setup-wp.sh"]

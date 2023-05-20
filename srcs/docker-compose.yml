@@ -4,6 +4,7 @@ services:
   nginx:
     build: ./requirements/nginx
     container_name: nginx
+    image: nginx
     restart: always
     depends_on:
       - wordpress
@@ -17,11 +18,10 @@ services:
   wordpress:
     build: ./requirements/wordpress
     container_name: wordpress
+    image: wordpress
     restart: always
     depends_on:
       - mariadb
-    ports:
-      - 9000:9000
     volumes:
       - wp:/var/www/html
     env_file:
@@ -32,9 +32,8 @@ services:
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
+    image: mariadb
     restart: always
-    ports:
-      - 3306:3306
     volumes:
       - md:/var/lib/mysql
     env_file:
@@ -45,21 +44,21 @@ services:
   redis:
     build: ./requirements/bonus/redis
     container_name: redis
+    image: redis
     depends_on:
       - wordpress
     restart: always
-    ports:
-      - 6379:6379
     networks:
       - sasori_chunk
 
   ftp:
     build: ./requirements/bonus/ftp
     container_name: ftp
+    image: ftp
     restart: always
     ports:
-      - "21:21"
-      - "21100-21110:21100-21110"
+      - 21:21
+      - 21100-21110:21100-21110
     volumes:
       - wp:/var/www/html
     env_file:
@@ -70,6 +69,7 @@ services:
   staticsite:
     build: ./requirements/bonus/staticsite
     container_name: staticsite
+    image: staticsite
     restart: always
     ports:
       - 7777:7777
@@ -79,6 +79,7 @@ services:
   adminer:
     build: ./requirements/bonus/adminer
     container_name: adminer
+    image: adminer
     restart: always
     depends_on:
       - mariadb
@@ -90,6 +91,7 @@ services:
   service:
     build: ./requirements/bonus/service
     container_name: service
+    image: service
     restart: always
     ports:
       - 8977:8977
@@ -108,7 +110,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/aaljaber/data/wp
+      device: /Users/sasori/data/wp
 
   md:
     name: md
@@ -116,7 +118,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/aaljaber/data/md
+      device: /Users/sasori/data/md
 
   pr:
     name: pr
@@ -124,7 +126,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/aaljaber/data/pr
+      device: /Users/sasori/data/pr
 
 # network driver enables containerized applications to communicate with each other and with external resources
 # bridge is the default network driver, used to create internal network within docker host
