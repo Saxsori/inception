@@ -3,16 +3,16 @@ DB_PATH = /home/${USER}/data/md
 WP_PATH = /home/${USER}/data/pr
 PR_PATH = /home/${USER}/data/wp
 
-volume: 
+volume:
 	mkdir -p $(DB_PATH) $(WP_PATH) $(PR_PATH)
 
-build: 
+build:
 	docker-compose -f ./srcs/docker-compose.yaml up --build 
 
-run: 
+run:
 	docker-compose -f ./srcs/docker-compose.yaml up
 
-clean: 
+clean:
 	docker-compose -f ./srcs/docker-compose.yaml down -v
 
 all: volume build 
