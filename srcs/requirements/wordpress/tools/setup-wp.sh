@@ -38,8 +38,6 @@ wp user create --allow-root --path=/var/www/html/ $WP_USER $WP_USER_EMAIL --role
 echo "ABRAR: create user in wp db !!"
 
 
-
-
 # set up redis cache
 wp config --allow-root --path=/var/www/html/ set WP_CACHE_KEY_SALT $REDIS_KEY_SALT
 
