@@ -1,7 +1,7 @@
 
-DB_PATH = /home/${USER}/data/md
-WP_PATH = /home/${USER}/data/pr
-PR_PATH = /home/${USER}/data/wp
+DB_PATH = /home/aaljaber/data/md
+WP_PATH = /home/aaljaber/data/pr
+PR_PATH = /home/aaljaber/data/wp
 
 volume:
 	mkdir -p $(DB_PATH) $(WP_PATH) $(PR_PATH)

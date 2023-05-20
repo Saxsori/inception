@@ -95,7 +95,6 @@ services:
       - 8977:8977
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - pr:/data
     networks:
       - sasori_chunk
 
@@ -109,7 +108,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/$USER/data/wp
+      device: /home/aaljaber/data/wp
 
   md:
     name: md
@@ -117,7 +116,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/$USER/data/md
+      device: /home/aaljaber/data/md
 
   pr:
     name: pr
@@ -125,7 +124,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/$USER/data/pr
+      device: /home/aaljaber/data/pr
 
 # network driver enables containerized applications to communicate with each other and with external resources
 # bridge is the default network driver, used to create internal network within docker host
