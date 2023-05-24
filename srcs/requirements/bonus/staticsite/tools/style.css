@@ -1,0 +1,128 @@
+
+
+h1 {
+	font-size: 50px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: gray;
+	color: aquamarine;
+	margin: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+	font-size: 25px;
+}
+
+.bord {
+	margin: 80px;
+
+	display: flex;
+	/* margin: 0px; */
+	flex-direction: column;
+	background-color: gray;
+	/* padding: 20px; */
+	/* margin: -1px; */
+}
+
+button {
+	margin: 20px;
+	width: 90px;
+	height: 35px;
+	font-size: 18px;
+    cursor: pointer;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: #ffffff;
+    border-color: blueviolet;
+}
+
+button:hover{
+	background-color: aquamarine;
+    border-color: aquamarine;
+    color: rgb(114, 114, 114);
+}
+
+#box1, #box2, #box3, #box4, #box5, #box6, #box7, #box8, #box9 {
+	background-color: gray;
+	border: 5px blueviolet;
+	clear: both;
+	margin: -2px;
+	width: 150px;
+	height: 150px;
+	color: aquamarine;
+	font-size: 100px;
+	text-align: center;
+}
+
+#box1:hover, #box2:hover, #box2:hover, #box3:hover, #box4:hover, #box5:hover, #box6:hover, #box7:hover, #box8:hover, #box9:hover {
+	background-color: rgb(114, 114, 114);
+	cursor: pointer;
+}
+
+#box1 {
+	clear: both;
+	border-right-style: solid;
+	border-bottom-style: solid;
+}
+
+#box2 {
+	clear: both;
+	border: 5px blueviolet;
+	border-right-style: solid;
+	border-bottom-style: solid;
+}
+
+#box3 {
+	clear: both;
+	border: 5px blueviolet;
+	border-bottom-style: solid;
+}
+
+#box4 {
+	clear: both;
+	border: 5px blueviolet;
+	border-bottom-style: solid;
+	border-top-style: solid;
+}
+
+#box5 {
+	clear: both;
+	border: 5px blueviolet;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-bottom-style: solid;
+}
+
+#box6 {
+	clear: both;
+	border: 5px blueviolet;
+	border-bottom-style: solid;
+	
+}
+
+#box7 {
+	clear: both;
+	border: 5px blueviolet;
+	border-top-style: solid;
+}
+
+#box8 {
+	clear: both;
+	border: 5px blueviolet;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+}
+#box9 {
+	clear: both;
+	border: 5px blueviolet;
+}

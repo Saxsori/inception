@@ -1,110 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>My Showcase Website</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-
-		header {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
-
-		nav {
-			background-color: #f2f2f2;
-			display: flex;
-			justify-content: center;
-			padding: 10px;
-		}
-
-		nav a {
-			color: #333;
-			margin: 0 10px;
-			text-decoration: none;
-		}
-
-		nav a:hover {
-			color: #fff;
-			background-color: #333;
-			padding: 5px;
-			border-radius: 5px;
-		}
-
-		section {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			padding: 20px;
-		}
-
-		.card {
-			background-color: #f2f2f2;
-			border-radius: 5px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-			margin: 20px;
-			max-width: 300px;
-			padding: 20px;
-			text-align: center;
-		}
-
-		.card h2 {
-			font-size: 24px;
-			margin-bottom: 10px;
-		}
-
-		.card p {
-			font-size: 16px;
-			line-height: 1.5;
-			margin-bottom: 20px;
-		}
-
-		.card img {
-			max-width: 100%;
-			margin-bottom: 20px;
-		}
-
-		footer {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
-	</style>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="game.js"></script>
+	<title>Tic Tac Toe</title>
 </head>
 <body>
-	<header>
-		<h1>My Showcase Website</h1>
-	</header>
-	<nav>
-		<a href="#">Home</a>
-		<a href="#">About</a>
-		<a href="#">Contact</a>
-	</nav>
-	<section>
-		<div class="card">
-			<img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
-			<h2>Card Title</h2>
-			<p>Some text goes here to describe the card.</p>
-		</div>
-		<div class="card">
-			<img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
-			<h2>Card Title</h2>
-			<p>Some text goes here to describe the card.</p>
-		</div>
-		<div class="card">
-			<img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
-			<h2>Card Title</h2>
-			<p>Some text goes here to describe the card.</p>
-		</div>
-	</section>
-	<footer>
-		<p>&copy; 2023 My Showcase Website</p>
-	</footer>
+	<h1>Ready to play!</h1>
+	<div class="bord">
+	  <div class="row1">
+	    <input type="text" id="box1" onclick=" BoxOne(); CheckStatus();" readonly>
+	    <input type="text" id="box2" onclick=" BoxTwo(); CheckStatus();" readonly>
+	    <input type="text" id="box3" onclick=" BoxThree(); CheckStatus(); " readonly>
+	  </div>
+	  <div class="row2">
+	    <input type="text" id="box4" onclick=" BoxFour(); CheckStatus();" readonly>
+	    <input type="text" id="box5" onclick=" BoxFive(); CheckStatus();" readonly>
+	    <input type="text" id="box6" onclick=" BoxSix(); CheckStatus();" readonly>
+	  </div>
+	  <div class="row3">
+	    <input type="text" id="box7" onclick=" BoxSeven(); CheckStatus();" readonly>
+	    <input type="text" id="box8" onclick=" BoxEight(); CheckStatus();" readonly>
+	    <input type="text" id="box9" onclick=" BoxNine(); CheckStatus();" readonly>
+	  </div>
+	</div>
+	<p id="result">Player X turn</p>
+	<button onClick="reset_boxes();" >Reset</button>
 </body>
 </html>
