@@ -2,7 +2,7 @@ FROM debian:buster
 
 RUN apt-get update && apt-get install -y nginx
 
-COPY ./tools/index.html /var/www/html/index.html
+COPY ./tools/*  /var/www/html/*
 
 COPY ./conf/static.conf /etc/nginx/sites-available/static.conf 
 
