@@ -33,7 +33,7 @@ echo "ABRAR: wp installation page !!"
 
 
 # create a user with role of contributor
-wp user create --allow-root --path=/var/www/html/ $WP_USER $WP_USER_EMAIL --role=contributor --user_pass=s$WP_USER_PASS
+wp user create --allow-root --path=/var/www/html/ $WP_USER $WP_USER_EMAIL --role=contributor --user_pass=$WP_USER_PASS
 echo "ABRAR: create user in wp db !!"
 
 
