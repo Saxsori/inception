@@ -60,10 +60,55 @@ networking, security, and system administration.
 - Avoid publicly storing credentials, as this could result in project failure due to security concerns.
 
 ## Docker Infrastructure Diagram 
-
+![](https://github.com/Saxsori/inception/blob/main/readme-assist/2.png)
 
 ## Project Directory Structure
 
+An example of the expected directory structure
+
+``` ruby
+root/
+│
+├── src/
+│   ├── requirements/
+│   │   ├── bonus/
+│   │   │   ├── adminer/
+│   │   │   │   ├── conf/
+│   │   │   │   ├── Dockerfile
+│   │   │   │   └── tools/
+│   │   │   ├── ftp/
+│   │   │   │   ├── conf/
+│   │   │   │   ├── Dockerfile
+│   │   │   │   └── tools/
+│   │   │   ├── redis/
+│   │   │   │   ├── conf/
+│   │   │   │   ├── Dockerfile
+│   │   │   │   └── tools/
+│   │   │   ├── service/
+│   │   │   │   ├── conf/
+│   │   │   │   ├── Dockerfile
+│   │   │   │   └── tools/
+│   │   │   └── static_file/
+│   │   │       ├── conf/
+│   │   │       ├── Dockerfile
+│   │   │       └── tools/
+│   │   ├── mariadb/
+│   │   │   ├── conf/
+│   │   │   ├── Dockerfile
+│   │   │   └── tools/
+│   │   ├── nginx/
+│   │   │   ├── conf/
+│   │   │   ├── Dockerfile
+│   │   │   └── tools/
+│   │   └── wordpress/
+│   │       ├── conf/
+│   │       ├── Dockerfile
+│   │       └── tools/
+│   ├── .env
+│   └── docker-compose.yml
+└── Makefile
+
+```
 ## 🎁 Bouns 
 
 ### 🐳  Docker Infrastructure 
