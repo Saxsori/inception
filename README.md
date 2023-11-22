@@ -119,13 +119,14 @@ root/
 - Set up an FTP server container linked to the WordPress volume.
 - Create a non-PHP static website.
 - Configure and implement Adminer for database management.
+- One more service of your choice.
 
 ### 🌐 Network Specification
 - Open additional ports for extra services.
 
 ### 📊 Evaluation Criteria
 - Assess the bonus section only if the mandatory part is perfected.
-- Introduce a chosen service with justification.
+- Justify the choosen Service.
 
 
 
